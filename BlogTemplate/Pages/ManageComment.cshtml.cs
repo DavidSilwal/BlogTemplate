@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BlogTemplate._1.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +17,7 @@ namespace BlogTemplate._1.Pages
         }
 
         [ValidateAntiForgeryToken]
-        public IActionResult OnPostDeleteComment(Guid commentId, int id)
+        public IActionResult OnPostDeleteComment(Guid commentId, string id)
         {
             Post post = _dataStore.GetPost(id);
 
@@ -32,7 +29,7 @@ namespace BlogTemplate._1.Pages
         }
 
         [ValidateAntiForgeryToken]
-        public IActionResult OnPostUndeleteComment(Guid commentId, int id)
+        public IActionResult OnPostUndeleteComment(Guid commentId, string id)
         {
             Post post = _dataStore.GetPost(id);
 
